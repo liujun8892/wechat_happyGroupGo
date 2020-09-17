@@ -1,0 +1,138 @@
+.box{
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  /*overflow: hidden;*/
+  background-color: #f2f2f2;
+}
+.head{
+  width: 100%;
+  height:400rpx;
+  background-color: white;
+  margin-top:0;
+}
+.head-info{
+  width:94%;
+  height:100%;
+  margin-left:3%;
+}
+.head-img{
+  width:35%;
+  height:340rpx;
+  margin-top:30rpx;
+  float:left;
+}
+.head-right{
+  width:62%;
+  margin-left:3%;
+  height:340rpx;
+  margin-top:30rpx;
+  /* background-color: #ccc; */
+  float:left;
+}
+.movie-name {
+  font-size: 35rpx;
+  font-weight: 550;
+}
+.movie-info{
+  width:100%;
+  height:50rpx;
+  line-height:50rpx;
+  font-size:24rpx;
+  color:#8b918f;
+}
+/*--------------------------------性感分割线------------------------------------*/
+.movie-prevue{
+  width: 100%;
+  height:500rpx;
+  background-color:white;
+}
+
+.movie-holder {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:96%;
+  height:480rpx;
+  margin-left:2%;
+  background-color: #000;
+}
+
+.movie-holder .logo {
+  position: absolute;
+  right: 2%;
+  top: 6%;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, .5);
+}
+
+.movie-holder .play-control {
+  margin-bottom: 10rpx;
+  border: 20rpx solid #000;
+  border-left: 20rpx solid #fff;
+  transform: translateX(25%);
+}
+
+.movie-holder .movie-time {
+  color: #fff;
+}
+
+.video{
+  width:96%;
+  height:480rpx;
+  margin-left:2%;
+}
+/*--------------------------------性感分割线------------------------------------*/
+.hot-movie{
+  width:96%;
+  height:100rpx;
+  margin-left:2%;
+  font-size:30rpx;
+  line-height:100rpx;
+  
+}
+.hot-box{
+  width:100%;
+  background-color:white;
+  margin-top:20rpx;
+}
+
+/*--------------------------------性感分割线------------------------------------*/
+.camera{
+  width:100%;
+  background-color:white;
+  margin-top:20rpx
+}
+.camera-intro{
+  width:96%;
+  margin-left:2%;
+}
+.camera-item{
+  height:210rpx;
+  border-bottom:1px solid #bbb;
+}
+.camera-item-top{
+  width:100%;
+  height:70rpx;
+  line-height:70rpx;
+  font-size:35rpx;
+}
+.camera-item-center{
+  width:100%;
+  height:70rpx;
+  line-height:70rpx;
+  font-size:38rpx;
+  color:#05c2ac;
+}
+.camera-item-bottom{
+  width:100%;
+  height:70rpx;
+  line-height:70rpx;
+  font-size:24rpx;
+  color:#8b918f;
+}
+.qi{
+  font-size:25rpx;
+}

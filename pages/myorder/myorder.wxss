@@ -1,0 +1,113 @@
+.box{
+  width: 100%;
+  min-height: 1000rpx;
+}
+.body{
+  width:100%;
+  min-height: 100%;
+}
+.hidden{
+  display:none;
+}
+.head{
+  width:100%;
+  height:80rpx;
+}
+.head-item{
+  height:100%;
+  width:33.33333%;
+  float:left;
+  border-bottom:1px solid #ccc;
+  text-align:center;
+  line-height:80rpx;
+  font-size:28rpx;
+}
+.head-selected {
+  border-bottom: 2px solid #05c2ac;
+}
+.group-item{
+  width:100%;
+  height:240rpx;
+  border-bottom:1px solid #bbb;
+}
+.item-info{
+  width:90%;
+  height:200rpx;
+  margin: 20rpx 5%;
+  /* background-color: #ccc; */
+}
+.item-img{
+  width: 15%;
+  height:100rpx;
+  float:left;
+  border-radius: 10rpx;
+}
+.item-info-right{
+  width:80%;
+  margin-left:5%;
+  float:left;
+  height:100%;
+  /* background-color: red; */
+}
+.item-title{
+  width:80%;
+  height:50rpx;
+  font-size:30rpx;
+  line-height:50rpx;
+  float:left;
+}
+.item-state{
+  width:20%;
+  height:50rpx;
+  font-size:27rpx;
+  color:#05c2ac;
+  line-height:50rpx;
+  text-align:center;
+}
+.item-time-num-price{
+  width:100%;
+  font-size:25rpx;
+  color:#8b918f;
+  margin-top:8rpx;
+}
+/* 电影票 */
+.buy-button{
+   margin-top: 70rpx; 
+  width: 100%;
+  height: 70rpx;
+   line-height: 70rpx; 
+  font-size: 30rpx;
+  border: 1px solid red;
+  border-radius:10rpx;
+  text-align:center;
+}
+.payed{
+  margin-top: 70rpx; 
+  width: 100%;
+  height: 70rpx;
+   line-height: 70rpx; 
+  font-size: 30rpx;
+  border: 1px solid green;
+  border-radius:10rpx;
+  text-align:center;
+}
+.movie-item-img{
+  width: 22%;
+  height:100%;
+  float:left;
+  border-radius: 10rpx;
+}
+.movie-item-info-center{
+  width:60%;
+  margin-left:3%;
+  float:left;
+  height:100%;
+}
+.movie-item-title{
+  width:100%;
+}
+.movie-item-info-right{
+  width:15%;
+  height:100%;
+  float:left;
+}

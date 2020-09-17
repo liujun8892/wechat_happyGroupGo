@@ -1,0 +1,206 @@
+/* components/myWxPay/myWxPay.wxss */
+/* 微信支付 */
+.wx-pay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0,0.3);
+  z-index: 999;
+}
+
+.wx-pay .pay-control {
+  position: absolute;
+  padding: 25rpx 20rpx;
+  box-sizing: border-box;
+  margin-top: 20%;
+  margin-left: 15%;
+  width: 70%;
+  height: 40%;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.wx-pay .pay-control .pay-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wx-pay .pay-control .pay-title .pay-option-finger {
+  color: #5C6B83;
+}
+
+.wx-pay .pay-control .pay-title .close-btn {
+  font-size: 45rpx;
+}
+
+.wx-pay .goods-name {
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.wx-pay .goods-price {
+  margin-top: 30rpx;
+  font-size: 50rpx;
+  font-weight: 700;
+  text-align: center;
+}
+
+.line {
+  margin-top: 30rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.pay-way {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #949494;
+}
+
+.pay-way .option {
+  display: flex;
+  align-items: center;
+}
+
+.pay-way .option image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.pay-way .option text {
+  padding: 0 8rpx;
+  color: #000;
+}
+
+.pay-password {
+  display: flex;
+  width: 100%;
+  margin-top: 40rpx;
+  height: 70rpx;
+  border: 1px solid #f2f2f2;
+  border-right: none;
+}
+
+.pay-password .pay-password-item {
+  flex: 1;
+  height: 100%;
+  border-right: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pay-password .pay-password-item .dot {
+ width: 15rpx;
+ height: 15rpx;
+ border-radius: 15rpx;
+ background-color: #000;
+}
+
+.hide {
+  display: none;
+}
+
+.hideIpt {
+  position: absolute; 
+   left: -9999rpx; 
+  z-index: -1;
+}
+
+/* 微信支付中 */
+.wx-pay-load {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top:40%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%,-50%);  
+  width: 35%;
+  height: 250rpx;
+  background-color: #7F7F7F;
+  border-radius: 10rpx;
+  color: #fff;
+}
+
+.wx-pay-load image {
+  width: 65rpx;
+  height: 65rpx;
+}
+
+.wx-pay-load text {
+  line-height: 80rpx;
+}
+
+.dot-list {
+  display: flex;
+  width: 80rpx;
+  justify-content: space-evenly;
+}
+
+.dot-list .dot-list-item {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  background-color:  #969696;  
+}
+
+.dot-item-color3 {
+  background-color:  #969696 !important;  
+}
+
+.dot-item-color2 {
+  background-color:  #B5B5B5  !important;  
+}
+
+.dot-item-color1 {
+  background-color:  #F7F7F7  !important;  
+}
+
+/* 微信支付成功 */
+.wx-pay-success {
+  position: absolute;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  z-index: 9;
+}
+
+.wx-pay-success image {
+  margin-top: 15%;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.wx-pay-success .title {
+  line-height: 160rpx;
+}
+
+.wx-pay-success .price {
+  font-size: 60rpx;
+  font-weight: 700;
+}
+
+.wx-pay-success .success-btn {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+    width: 50%;
+    height: 70rpx;
+    text-align: center;
+    line-height: 70rpx;
+    background-color: #F2F2F2;
+    color: #69AE83;
+}

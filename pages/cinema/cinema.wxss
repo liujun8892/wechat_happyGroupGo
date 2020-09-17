@@ -1,0 +1,187 @@
+.box {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+}
+
+/* 头部 */
+
+.head {
+  width: 100%;
+  height: 160rpx;
+   border-bottom: 1px solid #bbb;
+}
+
+.head-top {
+  width: 96%;
+  height: 150rpx;
+  /* background-color: red; */
+  margin-left: 2%;
+  margin-top: 0;
+ 
+}
+
+.top-left {
+  width: 80%;
+  height: 100%;
+  border-right: 1px solid #bbb;
+  float: left;
+}
+
+.top-name {
+  width: 100%;
+  height: 75rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  /* color:#8b918f; */
+}
+
+.top-address {
+  width: 100%;
+  height: 75rpx;
+  line-height: 50rpx;
+  font-size: 25rpx;
+  color: #8b918f;
+}
+
+.top-right {
+  width: 19%;
+  height: 100%;
+  /* line-height:150rpx; */
+  float: left;
+  text-align: center;
+}
+
+.address-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 30rpx;
+}
+
+.top-map {
+  width: 100%;
+  font-size: 25rpx;
+  color: #8b918f;
+}
+
+/* 头部结束 */
+
+.uploadWrap {
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  display: -webkit-box;
+  flex-direction: column;
+}
+
+.upload_Item {
+  width: 160rpx;
+  height: 260rpx;
+  flex: 1;
+  margin-left: 15rpx;
+}
+
+.upload_Item_img {
+  width: 160rpx;
+  height: 200rpx;
+  background-color: #ccc;
+}
+
+.upload_Item_name {
+  height: 60rpx;
+  width: 160rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.intro-movie {
+  height: 270rpx;
+  border-bottom: 1px solid #bbb;
+  margin-top:10rpx;
+}
+
+/* 电影列表结束 */
+
+/*--------------------------------性感分割线------------------------------------*/
+
+.camera {
+  width: 100%;
+  background-color: white;
+  margin-top: 20rpx;
+}
+
+.camera-intro {
+  width: 96%;
+  margin-left: 2%;
+}
+
+.camera-item {
+  height: 210rpx;
+  border-bottom: 1px solid #bbb;
+}
+
+.camera-item-top {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 35rpx;
+}
+
+.camera-item-center {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 38rpx;
+  color: #05c2ac;
+}
+
+.camera-item-bottom {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #8b918f;
+}
+
+.qi {
+  font-size: 25rpx;
+}
+
+.item-left {
+  width: 30%;
+  height: 100%;
+  float: left;
+}
+.left-img{
+  width:80%;
+  margin-right:10%;
+  height:90%;
+  margin-top:5%;
+}
+.item-center {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.item-right {
+  width: 20%;
+  height: 100%;
+  float: left;
+  line-height: 210rpx;
+  text-align: center;
+}
+
+.buy-button {
+  margin-top: 70rpx;
+  width: 80%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  border: 1px solid red;
+  border-radius:10rpx;
+}

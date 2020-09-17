@@ -1,0 +1,86 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+/* 顶部的订单信息控件 */
+.order-info-control {
+  background-color: #fff;
+  font-size: 33rpx;
+}
+
+.order-info-control .order-info-item {
+  display: flex;
+  height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-info-control .order-info-item .goodsPrice {
+  color: #fc9200;
+}
+
+.order-info-control .order-info-item .amountControl {
+  display: flex;
+  width: 200rpx;
+  height: 60rpx;
+  color: #8d8d8d;
+  border: 1px solid #bbb;
+}
+
+.order-info-control .order-info-item .amountControl>view {
+   flex: 1;
+   text-align: center;
+   line-height: 60rpx;
+}
+
+.order-info-item .amountControl .count {
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+}
+
+.order-info-item .amountControl .count input {
+  width: 100%;
+  height: 100%;
+}
+
+.order-info-item .amountControl .add {
+  color:#05C2AC;
+}
+
+.subActive {
+  color:#05C2AC !important;
+}
+
+/* 底部的提交订单控件 */
+.order-submit-control {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  font-size: 30rpx;
+  height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.order-submit-control .totalPrice {
+  color: red;
+}
+
+.order-submit-control .sumbit {
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  background-color: #fc9200;
+}
+

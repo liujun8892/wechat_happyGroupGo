@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view>
+	<!-- 头部tab栏 -->
+	<view class="tabbar">
+		<view id="{{index}}" wx:for="{{tabbarList}}" class="tabbar-item" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" bindtap="toggleTabbar">
+			<text>{{item.name}}</text>
+			<view class="{{tabBarSelectedIndex===index?'tabbar-item-line':''}}"></view>
+		</view>
+	</view>
+
+	<!-- 吃美食主体内容 -->
+	<view  hidden="{{tabBarSelectedIndex!==0}}">
+		<!-- 美食分类 -->
+		<view class="food-classify">
+			<view class="food-classify-item" wx:for="{{foodClaassifyList}}" wx:key="index"><text class="{{foodClassifySelectedIndex===index?'bg-green':''}}" data-id="{{item._id}}" data-index="{{index}}" bindtap="toggleFoodClassify">{{item.name}}</text></view>
+		</view>
+
+		<!--  美食推荐列表 -->
+		<view class="food-recom">
+			<view class="food-recom-item" wx:for="{{foodShopList}}" wx:key="index" bindtap="goShopDetail" data-id="{{item._id}}">
+				<view class="food-image">
+					<image src="{{item.img}}"></image>
+				</view>
+				<view class="food-info">
+					<view class="title">{{item.name}}</view>
+					<view class="score item-margin-top my-flex-y-center">
+						<view class="star">
+							<image src="{{starUrl[itemStar]}}" class="item-image" wx:for="{{item.starArr}}" wx:for-index="indexStar" wx:for-item="itemStar" wx:key="indexStar"></image>
+						</view>
+						<view class="price item-font-size">￥{{item.price}}/人</view>
+					</view>
+					<view class="food-info-classify item-font-size item-margin-top">{{item.t_name}} | 正良</view>
+					<view class="consumer-count item-font-size item-margin-top my-flex-y-center">
+						<image src="../../images/zan.png" class="item-image item-margin-right"></image>
+						{{item.client_num}}人消费
+					</view>
+					<view class="split-line"></view>
+					<view class="group  item-font-size my-flex-y-center">
+						<image src="../../images/tuan.png" class="item-image"></image>
+						{{item.team_intro}}
+					</view>
+					<view class="ticket item-font-size my-flex-y-center">
+						<image src="../../images/quan.png" class="item-image"></image>
+						{{item.cprice}}元代{{item.replace}}元
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- 我的订单 -->
+		<view class="my-order" bindtap="myorder">
+			<image src="../../images/myorder.png"></image>
+		</view>
+	</view>
+
+	<!-- 正在开发提示页面 -->
+	<view class="developing" hidden="{{tabBarSelectedIndex===0||tabBarSelectedIndex===2}}">
+		<image src="../../images/waitting.jpg"></image>
+		<text>程序员正在开发，请过段时间再来逛吧~</text>
+	</view>
+</view>

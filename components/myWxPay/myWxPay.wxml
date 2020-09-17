@@ -1,0 +1,47 @@
+<!--components/myWxPay/myWxPay.wxml-->
+<view>
+  <!-- 微信支付 -->
+  <view class="wx-pay"  wx:if="{{wxPayState===1}}">
+    <view class="pay-control">
+      <view class="pay-title">
+        <view class="close-btn" bindtap="closePay">×</view>
+        <view class="title">请输入支付密码</view>
+        <view class="pay-option-finger">使用指纹</view>
+      </view>
+      <view class="goods-name">乐团支付</view>
+      <view class="goods-price">￥{{countPrice}}</view>
+      <view class="line"></view>
+      <view class="pay-way">
+        <view class="title">支付方式</view>
+        <view class="option">
+          <image src="../../images/money.png"></image>
+          <text>零钱</text>
+           ＞
+        </view>
+      </view>
+      <view class="pay-password">
+        <view class="pay-password-item" wx:for="{{passwordArr}}" wx:key="index">
+          <view class="dot {{item===0?'hide':''}}"></view>
+        </view>
+      </view>
+      <input value="" type="number" maxlength="6" bindinput="handlePasswordIpt" class="hideIpt" focus></input>
+    </view>
+  </view>
+
+  <!-- 微信支付中 -->
+  <view class="wx-pay-load" wx:if="{{wxPayState===2}}">
+    <image src="../../images/pay.png"></image>
+    <text>微信支付</text>
+    <view class="dot-list">
+      <view class="dot-list-item {{index===dotIndex?dotArr[0]:index-1===dotIndex?dotArr[1]:dotArr[2]}}" wx:for="{{dotArr}}"  wx:key="index"></view>
+    </view>
+  </view>
+
+  <!-- 微信支付成功 -->
+  <view class="wx-pay-success" wx:if="{{wxPayState===3}}">
+    <image src="../../images/pay-success.png"></image>
+    <text class="title">支付成功</text>
+    <view class="price">￥{{countPrice}}</view>
+    <view class="success-btn" bindtap="redirectOrderList">完成</view>
+  </view>
+</view>

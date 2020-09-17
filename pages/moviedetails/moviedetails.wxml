@@ -1,0 +1,56 @@
+<view class="box" wx:if="{{movieInfo}}">
+  <!-- 基本信息  -->
+  <view class='head'>
+    <view class='head-info'>
+      <image src="{{movieInfo.img}}" class='head-img'></image>
+      <view class='head-right'>
+        <view class="movie-name">{{movieInfo.name}}</view>
+        <view class='movie-info'>
+          {{movieInfo.english_name}}
+        </view>
+        <view class='movie-info'>
+          {{movieInfo.people}}人想看
+        </view>
+        <view class='movie-info'>
+          {{movieInfo.type}}
+        </view>
+        <view class='movie-info'>
+          {{movieInfo.location}}/{{movieInfo.time}}分钟
+        </view>
+        <view class='movie-info'>
+          {{movieInfo.show_time}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 预告片 -->
+  <view class='hot-box'>
+    <view class='hot-movie'>精彩预告</view>
+  </view>
+  <view class='movie-prevue'>
+    <!-- <view class="movie-holder">
+      <view class="logo">youku</view>
+      <view class="play-control"></view>
+      <view class="movie-time">01:50</view>
+    </view> -->
+    <video class='video' src="{{movieInfo.prevue}}"></video>
+  </view>
+
+  <!-- 有该电影的影院 -->
+  <view class='camera'>
+    <view class='camera-intro'>
+      <view class='camera-item' wx:for="{{cinemaInfo}}" wx:key="key" bindtap="cinemaClick" data-id="{{item.cid}}">
+        <view class='camera-item-top'>
+          {{item.c_name}}
+        </view>
+        <view class='camera-item-center'>
+          ￥{{item.c_price}}
+          <text class='qi'>起</text>
+        </view>
+        <view class="camera-item-bottom">
+          播放时间 : {{item.star_time}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

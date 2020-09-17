@@ -1,0 +1,55 @@
+<view class='box' bindtouchstart='touchstart' bindtouchend="touchend">
+  <view class='head'>
+    <view catchtap='headClick' data-id='1' class='head-item {{headIndex==1 ? "head-selected":""}}'>
+      全部团购订单
+    </view>
+    <view catchtap='headClick' data-id='2' class='head-item {{headIndex==2 ? "head-selected":""}}'>
+      电影选座定订单
+    </view>
+    <view catchtap='headClick' data-id='3' class='head-item {{headIndex==3 ? "head-selected":""}}'>
+      酒店预订订单
+    </view>
+  </view>
+  <view class='body  {{headIndex==1 ? "":"hidden"}}'>
+    <!-- catchtouchstart='touchstart' catchtouchend="touchend" -->
+    <view class='group-item' catchtap='orderClick' data-id="{{item._id}}" data-type='{{item.type}}' data-goods="{{item.goods_id}}" wx:for="{{groupOrder}}" wx:key="index">
+      <view class="item-info">
+        <image class='item-img' src='{{item.img}}'></image>
+        <view class='item-info-right'>
+          <text class="item-title">{{item.name}}</text>
+          <text style='{{item.state==0 ? "color:#E1251B" : item.state==1 ? "color:orange":"color:#05c2ac"}}' class='item-state'>{{item.state==0 ? '未付款' : item.state==1 ? '待评价':'已完成'}}</text>
+          <view class='item-time-num-price'>下单时间: {{item.create_time}}</view>
+          <view class='item-time-num-price'>数量: {{item.goods_num}}</view>
+          <view class='item-time-num-price'>总价: ¥{{item.order_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='body movie-body {{headIndex==2 ? "":"hidden"}}'>
+    <view class='group-item' wx:for="{{movieOrder}}" wx:key="index">
+      <view class="item-info">
+        <image class='movie-item-img' src='{{item.img}}'></image>
+        <view class='movie-item-info-center'>
+          <view class='movie-item-title item-title'>{{item.name}}</view>
+          <view class='item-time-num-price'>下单时间: {{item.create_time}}</view>
+          <view class='item-time-num-price'>数量: {{item.goods_num}}</view>
+          <view class='item-time-num-price'>总价: ¥{{item.order_price}}</view>
+        </view>
+        <view class='movie-item-info-right'>
+          <view class='buy-button' bindtap='pay' data-goodsId='{{item.goods_id}}' data-amount="{{item.goods_num}}" data-type="{{item.type}}" data-countPrice="{{item.order_price}}" data-orderId="{{item._id}}" wx:if="{{item.state==0}}">
+            付款
+          </view>
+          <view class='payed'  data-id='{{item._id}}' wx:else>
+            已付款
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<view class='body hotel-body {{headIndex==3 ? "":"hidden"}}'>
+  酒店
+</view>
+<!-- 微信支付 -->
+  <myWxPay _id="{{_id}}" amount="{{amount}}" type="{{type}}" countPrice="{{countPrice}}" orderId="{{orderId}}" wx:if="{{payShow}}" bind:closeWxpayComponent="closeConponet"></myWxPay>
+</view>

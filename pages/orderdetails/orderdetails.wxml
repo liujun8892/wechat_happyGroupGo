@@ -1,0 +1,62 @@
+<view class="box" wx:if="{{orderInfo}}">
+  <view class='main_content'>
+    <view class="top">
+      <!--内容及位置-->
+      <view class="main_center">
+        <view class='top-top'>
+          <image src='{{orderInfo.img}}' class='logo'></image>
+          <view class='top-right'>
+            <view class='top-title'>{{orderInfo.name}}</view>
+            <view class='top-intro'>{{orderInfo.intro}}</view>
+            <view class='top-price'>¥{{orderInfo.order_price}}</view>
+          </view>
+        </view>
+        <view class='payButton' data-id="{{orderInfo._id}}" bindtap='pay' wx:if="{{orderInfo.state==0}}">付款</view>
+        <view class='dissButton' data-id='{{orderInfo._id}}' data-type="{{orderInfo.type}}" bindtap='discuss' wx:if="{{orderInfo.state==1}}">评价</view>
+      </view>
+    </view>
+  </view>
+  <!--商家信息-->
+  <view class="lists">
+    <view class="lists_title">
+      <text class="li_con">订单信息</text>
+    </view>
+    <view class="lists_main">
+      <view class="main_center">
+        <view class="address">
+          <text class="address_txt">订单号 : {{orderInfo.order_number}}</text>
+        </view>
+        <view class="address">
+          <text class="address_txt">下单时间 : {{orderInfo.create_time}}</text>
+        </view>
+        
+        <view class="address">
+          <text class="address_txt">数量 : {{orderInfo.goods_num}}</text>
+        </view>
+        <view class="address">
+          <text class="address_txt">总价 : {{orderInfo.order_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--套餐信息-->
+  <view class="lists" wx:if="{{orderInfo.type==1}}">
+    <view class="lists_title">
+      <text class="li_con">套餐信息</text>
+    </view>
+    <view class="lists_main">
+      <view class="list_center">
+
+        <view class="info_item" wx:for="{{orderDetails}}" wx:key="a">
+          <view class="item_name">{{item.food_name}}</view>
+          <view class="item_info">{{item.food_num}}份({{item.food_num*item.food_price}}元)</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <!-- 微信支付 -->
+  <myWxPay _id="{{orderInfo.goods_id}}" amount="{{orderInfo.goods_num}}" type="orderInfo.type" countPrice="{{orderInfo.order_price}}" orderId="{{orderInfo._id}}" bind:closeWxpayComponent="closeConponet"  wx:if="{{payShow}}"></myWxPay>
+</view>

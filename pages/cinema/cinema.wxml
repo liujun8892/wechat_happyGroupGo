@@ -1,0 +1,58 @@
+<view class="box" wx:if="{{cinemaInfo}}">
+  <view class='head'>
+    <view class='head-top'>
+      <view class='top-left'>
+        <view class='top-name'>
+          {{cinemaInfo.name}}
+        </view>
+        <view class='top-address'>
+          {{cinemaInfo.address}}
+        </view>
+      </view>
+      <view class='top-right' catchtap="getMap">
+        <image class='address-img' src='/images/address.png'></image>
+        <view class='top-map'>地图</view>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-x="true" class='intro-movie'>
+    <view class="uploadWrap" scroll-x="true">
+      <view class="upload_Item" wx:for="{{movieInfo}}" wx:key='key'>
+        <image class="upload_Item_img" src="{{item.img}}"></image>
+        <view class='upload_Item_name'>{{item.m_name}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class='camera'>
+    <view class='camera-intro'>
+      <view class='camera-item' wx:for="{{movieInfo}}" wx:key='key'>
+        <view class='item-left'>
+          <image class='left-img' src='{{item.img}}'></image>
+        </view>
+        <view class='item-center'>
+          <view class='camera-item-top'>
+            {{item.m_name}}
+          </view>
+          <view class='camera-item-center'>
+            ￥{{item.price}}
+            <text class='qi'>起</text>
+          </view>
+          <view class="camera-item-bottom">
+            播放时间 : {{item.star_time}}
+          </view>
+        </view>
+        <view class='item-right'>
+          <view class='buy-button' bindtap='buy' data-id="{{item._id}}" data-name="{{item.c_name}} : {{item.m_name}}" data-price='{{item.price}}'>
+            购票
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+</view>
+<!-- <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" circles="{{circles}}" bindregionchange="regionchange" show-location style="width: 100%; height: 350px;">
+</map> -->

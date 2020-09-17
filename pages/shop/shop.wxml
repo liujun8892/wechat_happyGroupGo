@@ -1,0 +1,92 @@
+<!--pages/shop/shop.wxml-->
+<view class="page">
+	<!-- 店铺主要信息 -->
+	<view class="shop-main-info">
+		<!-- 店铺美食轮播图 -->
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper-box">
+			<block wx:for="{{bannerList}}" wx:key="index">
+				<swiper-item>
+					<image src="{{item.img}}"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+		<!-- 店铺名、评分、人均消费 -->
+		<view class="shop-basic-info">
+			<view class="shop-name">{{shopInfo.name}}</view>
+			<view class="shop-item">
+      <image src="{{starUrl[itemStar]}}" class="item-image" wx:for="{{shopInfo.starArr}}" wx:for-index="indexStar" wx:for-item="itemStar" wx:key="indexStar"></image>
+				<text class="price">人均: ￥{{shopInfo.price}}</text>
+			</view>
+		</view>
+		<!-- 店铺地址 -->
+		<view class="shop-address" catchtap="getMap">
+			<image src="../../images/address.png"></image>
+			<text>{{shopInfo.address}}</text>
+		</view>
+		<!-- 店铺电话 -->
+		<view class="shop-phone" bindtap="callPhone" data-phone="{{shopInfo.phone}}">
+			<image src="../../images/phone.png"></image>
+			<text>{{shopInfo.phone}}</text>
+		</view>
+	</view>
+
+	<!-- 代金券 -->
+	<view class="shop-ticket">
+		<view class="title">
+			<image src="../../images/quan.png"></image>
+			<text>代金券</text>
+		</view>
+		<view class="content">
+			<image src="{{shopInfo.cimg}}"></image>
+			<view class="info">
+				<view class="info-title">{{shopInfo.content}}</view>
+				<view class="info-content"><text class="price">￥{{shopInfo.cprice}} </text>门市价{{shopInfo.replace}} 已售{{shopInfo.c_sell_num}}</view>
+			</view>
+			<view class="buy-btn" catchtap="goBuy" data-id="{{shopInfo.cid}}" data-name="{{shopInfo.cname}}" data-price="{{shopInfo.cprice}}" data-type="coupon">购买</view>
+		</view>
+	</view>
+
+	<!-- 套餐 -->
+	<view class="shop-group shop-ticket">
+		<view class="title">
+			<image src="../../images/tuan.png"></image>
+			<text>套餐</text>
+		</view>
+		<view class="content" wx:for="{{groupBuyList}}" wx:key="index" catchtap="goGroup" data-id="{{item._id}}">
+			<image src="{{item.img}}"></image>
+			<view class="info">
+				<view class="info-title">{{item.intro}}</view>
+				<view class="info-content"><text class="price">￥{{item.price}} </text>门市价{{item.door_price}} 已售{{item.sell_num}}</view>
+			</view>
+			<view class="buy-btn" catchtap="goBuy" data-id="{{item._id}}" data-name="{{item.name}}" data-price="{{item.price}}" data-type="group">购买</view>
+		</view>
+	</view>
+
+	<!-- 推荐菜 -->
+	<view class="shop-recom-food">
+		<view class="title">推荐菜</view>
+		<view class="content">
+			<view class="food-item" wx:for="{{foodMenuList}}" wx:key="index">{{item.food_name}}</view>
+		</view>
+	</view>
+
+	<!-- 精选评价 -->
+	<view class="shop-comment">
+		<view class="title">精选评价</view>
+		<view class="content">
+			<view class="comment-item" wx:for="{{commentList}}" wx:key="index">
+				<image src="{{item.head}}"></image>
+				<view class="comemnt-detail">
+					<view class="nickname">{{item.nick_name}}</view>
+					<view class="score">
+						<image src="{{starUrl[itemStar]}}" class="item-image" wx:for="{{item.starArr}}" wx:for-index="indexStar" wx:for-item="itemStar" wx:key="indexStar"></image>
+						<text class="publish-time">{{item.create_time}}</text>
+					</view>
+					<view class="discuss">
+						{{item.content}}
+					</view>
+				</view>
+			</view>			
+		</view>
+	</view>
+</view>

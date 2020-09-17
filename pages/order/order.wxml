@@ -1,0 +1,31 @@
+<!--pages/order/order.wxml-->
+<view class="page">
+  <!-- 顶部的订单信息控件 -->
+  <view class="order-info-control">
+    <view class="order-info-item">
+      <view class="goodsName">{{name}}</view>
+      <view class="goodsPrice">￥{{price}}元</view>
+    </view>
+     <view class="order-info-item">
+      <view class="amountName">数量</view>
+      <view class="amountControl">
+        <view class="sub {{amount>1?'subActive':''}}" catchtap="subAmount">-</view>
+        <view class="count"><input value="{{amount}}" type="number" maxlength="3" bindinput="handleAmountInput" bindblur="handleAmountBlur"></input></view>
+        <view class="add" catchtap="addAmount">+</view>
+      </view>
+    </view>
+     <view class="order-info-item">
+      <view class="totalName">小计</view>
+      <view class="totalPrice">￥{{countPrice}}</view>
+    </view>
+  </view>
+  <!-- 底部的提交订单控件 -->
+  <view class="order-submit-control">
+    <view class="totalPrice">￥{{countPrice}}</view>
+    <view class="sumbit" bindtap="addOrder">提交订单</view>
+  </view>
+
+  <!-- 微信支付 -->
+  <myWxPay _id="{{_id}}" amount="{{amount}}" type="{{type}}" countPrice="{{countPrice}}" wx:if="{{payShow}}" bind:closeWxpayComponent="closeConponet"></myWxPay>
+
+</view>

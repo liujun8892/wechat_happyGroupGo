@@ -1,0 +1,134 @@
+.box{
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  /*overflow: hidden;*/
+  background-color: #f2f2f2;
+}
+.head {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  height: 45px;
+  line-height: 43px;
+  background-color:white;
+}
+.classes {
+  width: 20%;
+  float: left;
+  text-align: center;
+  font-size: 30rpx;
+  /* color: #8b918f; */
+  font-weight: normal;
+}
+
+.head-selected {
+  border-bottom: 2px solid #05c2ac;
+}
+/* 头部结束 */
+
+.uploadWrap {
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  display: -webkit-box;
+  flex-direction: column;
+}
+
+.upload_Item {
+  width: 160rpx;
+  height: 260rpx;
+  flex: 1;
+  margin-left:15rpx;
+}
+
+.upload_Item_img {
+  width: 160rpx;
+  height: 200rpx; 
+  background-color: #ccc;
+}
+.upload_Item_name{
+  height:60rpx;
+  width: 160rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size:28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.intro-movie{
+  height:270rpx;
+  background-color:white;
+  border-bottom:1px solid #bbb;
+}
+.hot-movie{
+  width:96%;
+  height:100rpx;
+  margin-left:2%;
+  font-size:30rpx;
+  line-height:100rpx;
+  
+}
+.hot-box{
+  width:100%;
+  background-color:white;
+}
+/*--------------------------------性感分割线------------------------------------*/
+.cinema{
+  width:100%;
+  background-color:white;
+  margin-top:20rpx
+}
+.cinema-intro{
+  width:96%;
+  margin-left:2%;
+}
+.cinema-item{
+  height:150rpx;
+  border-bottom:1px solid #bbb;
+}
+.cinema-item-top{
+  width:100%;
+  height:75rpx;
+  line-height:95rpx;
+  font-size:35rpx;
+}
+.cinema-item-bottom{
+  width:100%;
+  height:75rpx;
+  line-height:55rpx;
+  font-size:38rpx;
+  color:#05c2ac;
+}
+.qi{
+  font-size:25rpx;
+}
+.order{
+  width:130rpx;
+  height:130rpx;
+  border-radius: 130rpx;
+  position:fixed;
+  bottom:30rpx;
+  right:30rpx;
+  border:2px solid #bbb;
+  text-align:center;
+  background-color:white;
+}
+.order-icon{
+  width:100rpx;
+  height:100rpx;
+  margin-top:12rpx;
+}
+
+/* 正在开发提示页面 */
+.developing {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.developing image {
+  margin-bottom: 50rpx;
+}

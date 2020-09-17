@@ -1,0 +1,41 @@
+<view class="box" style="{{tabBarSelectedIndex===2?'':'background:#fff'}}">
+	<view class="head">
+		<view class="classes {{tabBarSelectedIndex===index?'head-selected':''}}" wx:key="index" data-index="{{index}}" data-name="{{item.name}}" bindtap='toggleTabbar' wx:for="{{tabbarList}}">{{item.name}}</view>
+	</view>
+
+  <!-- 看电影主体区域 -->
+	<view hidden="{{tabBarSelectedIndex!==2}}">
+		<view class='hot-box'>
+			<view class='hot-movie'>热映影片</view>
+		</view>
+		<scroll-view scroll-x="true" class="intro-movie">
+			<view class="uploadWrap" scroll-x="true">
+				<view class="upload_Item" wx:for="{{movie}}" wx:key="key" bindtap='movieClick' data-id="{{item._id}}">
+					<image class="upload_Item_img" src="{{item.img}}"></image>
+					<view class='upload_Item_name'>{{item.name}}</view>
+				</view>
+			</view>
+		</scroll-view>
+		<view class='cinema'>
+			<view class='cinema-intro'>
+				<view class='cinema-item' wx:for='{{cinema}}' wx:key='key' bindtap='cinemaClick' data-id='{{item._id}}'>
+					<view class='cinema-item-top'>
+						{{item.name}}
+					</view>
+					<view class='cinema-item-bottom'>
+						${{item.price}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+<!-- 正在开发提示页面 -->
+<view class="developing"   hidden="{{tabBarSelectedIndex===2 || tabBarSelectedIndex===0 }}">
+	<image src="../../images/waitting.jpg"></image>
+	<text>程序员正在开发，请过段时间再来逛吧~</text>
+</view>
+</view>
+<view class="order" bindtap="myorder">
+	<image class="order-icon" src="../../images/myorder.png" />
+</view>

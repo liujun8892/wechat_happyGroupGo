@@ -1,0 +1,165 @@
+/**index.wxss**/
+/* 头部tab栏 */
+.tabbar {
+  display: flex;
+  height: 45px;
+  line-height: 43px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabbar .tabbar-item {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.tabbar .tabbar-item .tabbar-item-line {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  border-bottom: 2px solid #05c2ac;
+}
+
+/* 美食分类 */
+.food-classify {
+  display: flex;
+  height: 90px;
+  background-color: #f2f2f2;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.food-classify .food-classify-item {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.food-classify .food-classify-item text {
+  display: block;
+  width: 80%;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.bg-green {
+  background-color: #05c2ac !important;
+}
+
+/* 美食推荐列表 */
+.food-recom {
+  background-color: #f2f2f2;
+  /* height: 900px; */
+}
+
+.food-recom .food-recom-item {
+  margin-top: 8px;
+  display: flex;
+  padding: 10px 5px 3px 5px;
+  background-color: #fff;
+  height: 185px;
+  box-sizing: border-box;
+  
+}
+
+.food-recom .food-recom-item .food-image {
+  margin-right: 10px;
+  width: 30%;
+  height: 100px;
+}
+
+.food-recom .food-recom-item .food-image image {
+  width: 100%;
+  height: 100%;
+}
+
+.food-recom-item .food-info {
+  width: 70%;
+}
+.food-recom-item .food-info .title { 
+  padding-left: 12px;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+
+.food-recom .food-recom-item .score {
+  display: flex;
+}
+
+.food-recom .food-recom-item .consumer-count.item-margin-top {
+  margin-top: 6px;
+}
+
+.food-info .split-line {
+  margin-top: 16px;
+  margin-left: 2%;
+  border-bottom: 1px solid #ddd;
+}
+
+.food-info .group  {
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+.item-image {
+  height: 28rpx;
+  width: 28rpx;
+}
+
+.item-font-size {
+  font-size: 26rpx;
+}
+
+.item-margin-top {
+  margin-top: 5px;
+}
+
+.item-margin-right {
+  margin-right: 5px;
+}
+
+.my-flex-y-center {
+  display: flex;
+  align-items: center;
+}
+
+/* 我的订单 */
+.my-order {
+  position: fixed;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 130rpx;
+  border: 2px solid #bbb;
+  right: 30rpx;
+  bottom: 30rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.my-order image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 12rpx;
+}
+
+/* 正在开发提示页面 */
+.developing {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.developing image {
+  margin-bottom: 50rpx;
+}
+
+
